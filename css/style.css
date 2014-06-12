@@ -1,0 +1,29 @@
+html{
+	margin:0px;
+	padding:0px;
+}
+body{
+	background-color: #E0E4CC;
+}
+#contenido{
+	margin-left: 20px;
+	background-color: #B0C8B2;
+}
+#logo{
+	float: left;
+	margin-left: 20px;
+	width: 100px;
+	height: 120px;
+	background-image: url("../imgs/npk.jpg");	
+}
+.btns{
+	float: left;
+	margin-left: 20px;
+	width: 168px;
+	height: 50px;
+	background-image: url("../imgs/boton-02.png");
+
+}
+.btns:hover{
+	background-position: 0px -48px;
+}
