@@ -4,44 +4,56 @@
 
 <head>
 	<title>NPK</title>
-	<link type="text/css" href="css/style.css" rel="stylesheet"></link>
-	<script type="text/javascript" src="js/jquery.js"></script>
+	 <style>
+    /* Prevents slides from flashing */
+    #slides {
+      display:none;
+    }
+  </style>
+      <link rel="stylesheet" type="text/css" href="css/sliderstyle.css">
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+      <script src="js/jquery.slides.min.js"></script>
+
+  <script>
+    $(function(){
+      $("#slides").slidesjs({
+        navigation: false,
+        play: {
+      		active: true,
+      		auto: true,
+      		effect: "fade"
+  		}
+      });
+    });
+  </script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$.each($('.btns'), function(i, v){
+			$.each($('.idiomas'), function(i, v){
 				$(v).click(function(){
-					window.location.href = 'index.php?page=' + v.id;
+					window.location.href = 'principal.php';
 				})
 			})
-			$('#indi').click(function(){
-				window.location.href = 'index.php';
-			});
 		});
 	</script>
 </head>
 
 <body>
-	<div id="contenido">
-		<div id="logo"></div>
-		<div id="botonera">
-			<div id="productos" class="btns"></div>
-			<div id="Info" class="btns"></div>
-			<div id="galeria" class="btns"></div>
-			<div id="crear" class="btns"></div>
-			<div id="contacto" class="btns"></div>
+	    <div id="slides">
+		<img src="imgs/m.jpg">
+		<img src="imgs/n.jpg">
+		<img src="imgs/b.jpg">
+		<img src="imgs/v.jpg">
+		<img src="imgs/c.jpg">
+ 	</div>
+ 	<div id="contenedor">
+	 	<div id="intro">
+			<div id="logo1">
+			</div>
+			<div id="lan" class="idiomas">
+				<a id="ES" class="idiomas" href="/principal.php"></a>
+				<a id="IN" class="idiomas" href="/principal.php"></a>
+			</div>
 		</div>
-	</div>
-
-		<div id="indi"></div>
-		<?php 			
-			if(!isset($_GET['page'])){
-
-			}else{
-				$page = $_GET['page'];
-				$path = $page . '.php';
-				include($path);
-			}
-		?>
 	</div>
 </body>
 
